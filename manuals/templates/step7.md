@@ -45,6 +45,20 @@ As a finishing touch, let's add a submit event handler that saves the current pa
 
 {{{diff_step 7.3}}}
 
+one improvemnt could be to go back to the list after pressing the `save` button. This can be achieved by adding 
+
+    this.router.navigate(['/']);
+    
+at the end of the `saveParty` method. In order for this to work, two additional changes are required:
+
+* you have to import the `Router` 
+* the Router needs to be injected into the class
+
+this is the code:
+
+    import {ActivatedRoute, Router} from "@angular/router";
+    constructor(private route: ActivatedRoute, private router: Router){}
+
 # Summary
 
 In this step, we learned:
